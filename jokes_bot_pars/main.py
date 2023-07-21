@@ -6,7 +6,6 @@ import random
 URL = 'https://anekdotov.net/anekdot/'
 api_key = '#########################'# api your telegram bot
 
-
 def parsing(URL):
     response = requests.get(URL)
     soup = BeautifulSoup(response.text, 'lxml')
