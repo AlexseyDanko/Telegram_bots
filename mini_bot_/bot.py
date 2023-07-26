@@ -4,18 +4,18 @@ import telebot
 TOKEN = 'your bot token'
 bot = telebot.TeleBot(TOKEN)
 
-# Список групп и их владельцев
+
 groups_and_owners = {
-    'TestGroup': 2031814734,  # Вставьте ID пользователя владельца группы
-    'TestTelegramBot': 2031814734,  # Вставьте ID пользователя владельца группы
-    # Добавьте другие группы и их владельцев по аналогии
+    'TestGroup': 2031814734,  # name group and id_owner
+    'TestTelegramBot': 2031814734,  # name group and id_owner
+   
 }
 
-# Ссылки на группы
+
 group_links = {
-    'TestGroup': 'https://t.me/Danko_Danila',
-    'TestTelegramBot': 'https://t.me/TestTelegramBotu',
-    # Добавьте другие группы и их ссылки по аналогии
+    'TestGroup': 'https://t.me/',#your links group
+    'TestTelegramBot': 'https://t.me/',#your links group
+    
 }
 
 @bot.message_handler(commands=['start'])
@@ -74,7 +74,6 @@ def process_message(message):
         bot.send_message(message.chat.id, "Ошибка: вы не являетесь владельцем выбранной группы или такой группы не существует.")
 
 def send_large_message_in_parts(chat_id, message_text):
-    # Разбиваем длинное сообщение на части и отправляем их по очереди
     max_message_length = 4096
     for i in range(0, len(message_text), max_message_length):
         bot.send_message(chat_id, message_text[i:i + max_message_length])
@@ -100,5 +99,4 @@ def show_groups(message):
     else:
         bot.send_message(message.chat.id, "Вы не являетесь владельцем ни одной из указанных групп.")
 
-# Запуск бота
 bot.polling()
