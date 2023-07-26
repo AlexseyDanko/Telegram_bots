@@ -1,21 +1,16 @@
 import telebot
 
-
 TOKEN = 'your bot token'
 bot = telebot.TeleBot(TOKEN)
-
 
 groups_and_owners = {
     'TestGroup': 2031814734,  # name group and id_owner
     'TestTelegramBot': 2031814734,  # name group and id_owner
-   
 }
-
 
 group_links = {
     'TestGroup': 'https://t.me/',#your links group
     'TestTelegramBot': 'https://t.me/',#your links group
-    
 }
 
 @bot.message_handler(commands=['start'])
