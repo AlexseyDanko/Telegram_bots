@@ -18,7 +18,6 @@ random.shuffle(list_jokes)
 
 bot = telebot.TeleBot(api_key)
 
-
 @bot.message_handler(commands=['start'])
 def hello(message):
     bot.send_message(message.chat.id, 'Hello, please enter any number: ')
