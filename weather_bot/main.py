@@ -8,7 +8,6 @@ bot = Bot(token=tg_bot_token)
 
 dispatcher = Dispatcher(bot)
 
-
 @dispatcher.message_handler(commands=['start'])
 async def start_command(message: types.Message):
     await message.reply('Please insert city name')
@@ -55,7 +54,6 @@ async def get_weather(message: types.Message):
                             f'Sunrise_time: {sunrise_time}\nSunset_time: {sunset_time}\nLength_of_the_day: {length_of_the_day}\n'
                             f'<><><>Good day!<><><>'
                             )
-
     except:
         await message.reply('\U00002653 Check your city name \U00002653')
 
